@@ -14,7 +14,6 @@ public class SensoGame extends JPanel {
     public BufferedImage imgLight;
     private BufferedImage offImage;
     private Graphics offGraphics;
-    private boolean clickAllowed = true;
     private Random rnd = new Random();
     public ArrayList<Integer> mission = new ArrayList<>();
     public ArrayList<Integer> input = new ArrayList<>();
@@ -27,8 +26,6 @@ public class SensoGame extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
                 e.consume();
-                if (clickAllowed == false)
-                    return;
                 if (userPlays == false)
                     return;
                 int x = e.getX()*2/getWidth();
@@ -36,13 +33,13 @@ public class SensoGame extends JPanel {
                 int pos = x+y*2;
                 switchLight (pos, 300);
                 input.add(pos);
-                //System.out.println(input.size()+ " -- "+ mission.size());
                 if (input.size() == mission.size()) {
                     if (!input.toString().contentEquals(mission.toString()))
                     {
                         System.out.println("fail");
                     }
                     input.clear();
+                    sleep(1000);
                     userPlays = false;
                 }
             }
@@ -52,7 +49,7 @@ public class SensoGame extends JPanel {
         for (;;) {
             if (userPlays == true)
             {
-                wait (2000);
+                sleep (1);
                 continue;
             }
             // computer plays
@@ -60,15 +57,15 @@ public class SensoGame extends JPanel {
             System.out.println(mission);
             for (Integer i : mission)
             {
-                switchLight (i, 1000);
-                wait (1000);
+                switchLight (i, 500);
+                sleep (500);
             }
             userPlays = true;
         }
         }).start();
     }
 
-    private void wait (int x)
+    private void sleep (int x)
     {
         try {
             Thread.sleep(x);
@@ -101,23 +98,23 @@ public class SensoGame extends JPanel {
                 break;
         }
         offGraphics.drawImage (imgLight, 0,0, null);
-        repaint();
-        clickAllowed = false;
+        paint();
 
-        new Timer().schedule(new TimerTask() {
-            @Override public void run() {
-                offGraphics.setClip(null);
-                offGraphics.drawImage (imgMain, 0,0, null);
-                repaint();
-                clickAllowed = true;
-            }
-        }, delay);
+        sleep (delay);
+        offGraphics.setClip(null);
+        offGraphics.drawImage (imgMain, 0,0, null);
+        paint();
     }
 
     @Override
     public void paint(Graphics g) {
-        //super.paintComponent(g);
+        if (g == null)
+            return;
         g.drawImage (offImage, 0,0, getWidth(), getHeight(), this);
+    }
+
+    private void paint() {
+        paint(getGraphics());
     }
 
     @Override
