@@ -36,6 +36,7 @@ public class SensoGame extends JPanel {
                 if (input.size() == mission.size()) {
                     if (!input.toString().contentEquals(mission.toString()))
                     {
+                        ClipHandler.play (4);
                         System.out.println("fail");
                     }
                     input.clear();
@@ -57,8 +58,8 @@ public class SensoGame extends JPanel {
             System.out.println(mission);
             for (Integer i : mission)
             {
-                switchLight (i, 500);
-                sleep (500);
+                switchLight (i, 300);
+                sleep (300);
             }
             userPlays = true;
         }
@@ -97,6 +98,7 @@ public class SensoGame extends JPanel {
                         offImage.getHeight());
                 break;
         }
+        ClipHandler.play (pos);
         offGraphics.drawImage (imgLight, 0,0, null);
         paint();
 
@@ -121,10 +123,9 @@ public class SensoGame extends JPanel {
     public void update(Graphics g) {
     }
 
-
     private void prepareGraphic (String face, String light) throws Exception {
-        imgMain = ImageIO.read (Objects.requireNonNull (getResource (face)));
-        imgLight = ImageIO.read (Objects.requireNonNull (getResource (light)));
+        imgMain = ImageIO.read (Objects.requireNonNull (Utils.getResource (face)));
+        imgLight = ImageIO.read (Objects.requireNonNull (Utils.getResource (light)));
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gs = ge.getDefaultScreenDevice();
@@ -135,16 +136,4 @@ public class SensoGame extends JPanel {
         offGraphics.drawImage (imgMain, 0,0, this);
     }
 
-    /////////////////////////////////////////////////////////////////////////
-
-    public static InputStream getResource (String name)
-    {
-        InputStream is = ClassLoader.getSystemResourceAsStream (name);
-        if (is == null)
-        {
-            System.out.println ("could not load: "+name);
-            return null;
-        }
-        return new BufferedInputStream(is);
-    }
 }
