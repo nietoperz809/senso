@@ -10,7 +10,10 @@ public class MainForm extends JFrame{
         mainPanel = new JPanel();
         mainPanel.setLayout (new BorderLayout());
         imgs = new SensoGame();
+        InputPanel ipane = new InputPanel(imgs);
+        imgs.setInputPane(ipane);
         mainPanel.add (imgs, BorderLayout.CENTER);
+        mainPanel.add (ipane.thePane, BorderLayout.NORTH);
         System.out.println (imgs.imgMain.getWidth() + "/" + imgs.imgMain.getHeight());
     }
 
@@ -18,7 +21,7 @@ public class MainForm extends JFrame{
         MainForm frame = new MainForm();
         frame.setContentPane(frame.mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,500);
+        frame.pack();
         frame.setVisible(true);
     }
 }

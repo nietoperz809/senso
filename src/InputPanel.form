@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="InputPanel">
+  <grid id="cbd77" binding="thePane" custom-create="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="48" y="54" width="436" height="262"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="c0d2d" class="javax.swing.JButton" binding="startButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Start"/>
+        </properties>
+      </component>
+      <component id="5c954" class="javax.swing.JLabel" binding="seq">
+        <constraints/>
+        <properties>
+          <preferredSize width="80" height="16"/>
+          <text value="Sequence: 0"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
