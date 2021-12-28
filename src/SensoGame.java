@@ -40,7 +40,11 @@ public class SensoGame extends JPanel {
                 //System.out.println(pos + "--"+ test);
                 if (test != pos) {
                     ClipHandler.play(4);
-                    // System.out.println("fail");
+                    JOptionPane.showMessageDialog(SensoGame.this,
+                            "You lose on seq #"+mission.size() +
+                            "\nHit START to play again ...",
+                            "Bang!",
+                            JOptionPane.WARNING_MESSAGE);
                     running = false;
                     return;
                 }
@@ -58,10 +62,8 @@ public class SensoGame extends JPanel {
                 if (userPlays == true || running == false) {
                     lock.lock();
                 }
-                // computer plays
                 mission.add(Math.abs(rnd.nextInt() % 4));
                 inputPanel.setSeq(mission.size());
-                // System.out.println(mission);
                 for (Integer i : mission) {
                     switchLight(i, 300);
                     sleep(300);

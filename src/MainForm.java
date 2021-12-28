@@ -3,18 +3,18 @@ import java.awt.*;
 
 public class MainForm extends JFrame{
     private JPanel mainPanel;
-    private SensoGame imgs;
+    private SensoGame game;
 
     MainForm() throws Exception {
         super ("title");
         mainPanel = new JPanel();
         mainPanel.setLayout (new BorderLayout());
-        imgs = new SensoGame();
-        InputPanel ipane = new InputPanel(imgs);
-        imgs.setInputPane(ipane);
-        mainPanel.add (imgs, BorderLayout.CENTER);
+        game = new SensoGame();
+        InputPanel ipane = new InputPanel(game);
+        game.setInputPane(ipane);
+        mainPanel.add (game, BorderLayout.CENTER);
         mainPanel.add (ipane.thePane, BorderLayout.NORTH);
-        System.out.println (imgs.imgMain.getWidth() + "/" + imgs.imgMain.getHeight());
+       // System.out.println (game.imgMain.getWidth() + "/" + game.imgMain.getHeight());
     }
 
     public static void main(String[] args) throws Exception {
