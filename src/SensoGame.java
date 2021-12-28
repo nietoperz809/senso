@@ -41,7 +41,7 @@ public class SensoGame extends JPanel {
                 if (test != pos) {
                     ClipHandler.play(4);
                     JOptionPane.showMessageDialog(SensoGame.this,
-                            "You lose on seq #"+mission.size() +
+                            "You'd lose at seq #"+mission.size() +
                             "\nHit START to play again ...",
                             "Bang!",
                             JOptionPane.WARNING_MESSAGE);
