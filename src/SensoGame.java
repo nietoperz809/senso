@@ -15,7 +15,6 @@ public class SensoGame extends JPanel {
     public ArrayList<Integer> input = new ArrayList<>();
     private BufferedImage offImage;
     private Graphics offGraphics;
-    private Random rnd = new Random();
     private boolean userPlays = false;
     private Lock lock = new Lock();
     private boolean running = false;
@@ -62,7 +61,8 @@ public class SensoGame extends JPanel {
                 if (userPlays == true || running == false) {
                     lock.lock();
                 }
-                mission.add(Math.abs(rnd.nextInt() % 4));
+                int rnd = (int) (Math.random() * 3);
+                mission.add (rnd);
                 inputPanel.setSeq(mission.size());
                 for (Integer i : mission) {
                     switchLight(i, 300);

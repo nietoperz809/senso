@@ -22,6 +22,7 @@ public class MainForm extends JFrame{
         frame.setContentPane(frame.mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
