@@ -21,6 +21,7 @@ public class SensoGame extends JPanel {
     private boolean userPlays = false;
     private boolean running = false;
     private InputPanel inputPanel;
+    private Random5x4 rand; // = new Random5x4();
 
     public SensoGame() throws Exception {
         super();
@@ -55,7 +56,8 @@ public class SensoGame extends JPanel {
                 if (userPlays || !running) {
                     lock.lock();
                 }
-                int rnd = (int) (Math.random() * 4);
+                //int rnd = (int) (Math.random() * 4);
+                int rnd = rand.get(mission.size());
                 mission.add(rnd);
                 inputPanel.setSeq(mission.size());
                 for (Integer i : mission) {
@@ -73,6 +75,7 @@ public class SensoGame extends JPanel {
     }
 
     public void start() {
+        rand = new Random5x4();
         input.clear();
         mission.clear();
         running = true;

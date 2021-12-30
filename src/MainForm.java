@@ -18,6 +18,7 @@ public class MainForm extends JFrame{
 
     public static void main(String[] args) throws Exception {
         MainForm frame = new MainForm();
+        frame.setTitle("The wonderful Senso!");
         frame.setContentPane(frame.mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
