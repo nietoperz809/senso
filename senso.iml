@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resource" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/out/artifacts/senso_jar" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
