@@ -15,8 +15,10 @@ public class Utils
         return new BufferedInputStream (is);
     }
 
-    public static URL getResourceAsURL(String name)
-    {
-        return ClassLoader.getSystemResource(name);
-    }
+// --Commented out by Inspection START (12/30/2021 4:53 AM):
+//    public static URL getResourceAsURL(String name)
+//    {
+//        return ClassLoader.getSystemResource(name);
+//    }
+// --Commented out by Inspection STOP (12/30/2021 4:53 AM)
 }

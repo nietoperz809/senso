@@ -1,7 +1,7 @@
 import javax.sound.sampled.*;
 
 public class ClipHandler {
-    private static Clip[] clips = new Clip[5];   // 4 = fail sound
+    private static final Clip[] clips = new Clip[5];   // 4 = fail sound
     static
     {
         for (int s=0; s<5; s++)

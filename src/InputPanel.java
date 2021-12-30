@@ -8,7 +8,7 @@ public class InputPanel {
     private JButton startButton;
     public JPanel thePane;
     private JLabel seq;
-    private SensoGame _game;
+    private final SensoGame _game;
 
     public void setSeq(int x) {
         seq.setText("Sequence: " + x);
@@ -17,12 +17,7 @@ public class InputPanel {
     public InputPanel(SensoGame game) {
         _game = game;
         $$$setupUI$$$();
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                _game.start();
-            }
-        });
+        startButton.addActionListener(e -> _game.start());
     }
 
     private void createUIComponents() {

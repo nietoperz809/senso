@@ -2,14 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainForm extends JFrame{
-    private JPanel mainPanel;
-    private SensoGame game;
+    private final JPanel mainPanel;
 
     MainForm() throws Exception {
         super ("title");
         mainPanel = new JPanel();
         mainPanel.setLayout (new BorderLayout());
-        game = new SensoGame();
+        SensoGame game = new SensoGame();
         InputPanel ipane = new InputPanel(game);
         game.setInputPane(ipane);
         mainPanel.add (game, BorderLayout.CENTER);
