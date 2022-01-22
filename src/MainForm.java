@@ -13,7 +13,6 @@ public class MainForm extends JFrame{
         game.setInputPane(ipane);
         mainPanel.add (game, BorderLayout.CENTER);
         mainPanel.add (ipane.thePane, BorderLayout.NORTH);
-       // System.out.println (game.imgMain.getWidth() + "/" + game.imgMain.getHeight());
     }
 
     public static void main(String[] args) throws Exception {

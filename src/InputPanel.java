@@ -10,18 +10,18 @@ public class InputPanel {
     private JLabel seq;
     private final SensoGame _game;
 
-    public void setSeq(int x) {
-        seq.setText("Sequence: " + x);
+    public void setSeq (int x) {
+        seq.setText ("Sequence: " + x);
     }
 
-    public InputPanel(SensoGame game) {
+    public InputPanel (SensoGame game) {
         _game = game;
-        $$$setupUI$$$();
-        startButton.addActionListener(e -> _game.start());
+        $$$setupUI$$$ ();
+        startButton.addActionListener (e -> _game.start ());
     }
 
-    private void createUIComponents() {
-        thePane = new JPanel();
+    private void createUIComponents () {
+        thePane = new JPanel ();
     }
 
     /**
@@ -31,22 +31,22 @@ public class InputPanel {
      *
      * @noinspection ALL
      */
-    private void $$$setupUI$$$() {
-        createUIComponents();
-        thePane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        startButton = new JButton();
-        startButton.setText("Start");
-        thePane.add(startButton);
-        seq = new JLabel();
-        seq.setPreferredSize(new Dimension(80, 16));
-        seq.setText("Sequence: 0");
-        thePane.add(seq);
+    private void $$$setupUI$$$ () {
+        createUIComponents ();
+        thePane.setLayout (new FlowLayout (FlowLayout.CENTER, 5, 5));
+        startButton = new JButton ();
+        startButton.setText ("Start");
+        thePane.add (startButton);
+        seq = new JLabel ();
+        seq.setPreferredSize (new Dimension (80, 16));
+        seq.setText ("Sequence: 0");
+        thePane.add (seq);
     }
 
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$() {
+    public JComponent $$$getRootComponent$$$ () {
         return thePane;
     }
 

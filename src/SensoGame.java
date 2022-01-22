@@ -28,6 +28,7 @@ public class SensoGame extends JPanel {
         prepareGraphic();
         setPreferredSize(new Dimension(500, 500));
         setToolTipText("1-yellow, 2-blue, 3-red, 4-green");
+        ClipHandler.play (5); // Initial silence
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -105,11 +106,11 @@ public class SensoGame extends JPanel {
                 offGraphics.setClip(offxhalf, offyhalf, offx, offy);
                 break;
         }
-        ClipHandler.play(pos);
         offGraphics.drawImage(imgLight, 0, 0, null);
         paint();
+        ClipHandler.play(pos);
 
-        sleep(300);
+        //sleep(100);
         offGraphics.setClip(null);
         offGraphics.drawImage(imgMain, 0, 0, null);
         paint();

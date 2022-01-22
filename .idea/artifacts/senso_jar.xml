@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="senso:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/senso_jar</output-path>
+    <output-path>$PROJECT_DIR$/senso_jar</output-path>
     <root id="archive" name="senso.jar">
       <element id="module-output" name="senso" />
     </root>
